@@ -1,0 +1,16 @@
+SELECT * 
+FROM invoice i
+JOIN invoice_line il
+ON i.invoice_id = il.invoice_id
+WHERE unit_price > 0.99
+
+
+    1. Get all invoices where the unit_price on the invoice_line is greater than $0.99.
+    2. Get the invoice_date, customer first_name and last_name, and total from all invoices.
+    3. Get the customer first_name and last_name and the support rep's first_name and last_name from all customers.
+        Support reps are on the employee table.
+    4. Get the album title and the artist name from all albums.
+    5. Get all playlist_track track_ids where the playlist name is Music.
+    6. Get all track names for playlist_id 5.
+    7. Get all track names and the playlist name that they're on ( 2 joins ).
+    8. Get all track names and album titles that are the genre Alternative & Punk ( 2 joins ).
