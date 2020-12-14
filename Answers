@@ -72,11 +72,21 @@ FROM track
 WHERE track_id IN ( SELECT track_id FROM playlist_track WHERE playlist_id = 5);
 
 4)
-4. Get all tracks where the genre is Comedy.
+SELECT *
+FROM track
+WHERE genre_id IN (SELECT genre_id FROM genre WHERE name = 'Comedy');
 
 5)
-5. Get all tracks where the album is Fireball.
+SELECT *
+FROM track
+WHERE album_id IN (SELECT album_id FROM album WHERE title = 'Fireball');
 
 6)
-6. Get all tracks for the artist Queen ( 2 nested subqueries ).
+SELECT *
+FROM track
+WHERE album_id IN (
+	SELECT album_id FROM album WHERE artist_id IN (
+  	SELECT artist_id FROM artist WHERE name = 'Queen'
+  )
+);
 
