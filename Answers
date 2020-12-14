@@ -1,3 +1,4 @@
+JOINS______________________________________________________
 1)
 SELECT * 
 FROM invoice i
@@ -54,7 +55,7 @@ JOIN genre g
 ON g.genre_id = t.genre_id
 WHERE g.name = 'Alternative & Punk'
 
-NESTED QUERIES______________________________________
+NESTED QUERIES_____________________________________________
 
 1)
 SELECT *
@@ -90,3 +91,31 @@ WHERE album_id IN (
   )
 );
 
+UPDATING ROWS______________________________________________
+
+1)
+UPDATE customer
+SET fax = null
+WHERE fax IS NOT null;
+
+2)
+UPDATE customer
+SET company = 'Self'
+WHERE company IS null;
+
+3)
+UPDATE customer
+SET last_name = 'Thompson'
+WHERE first_name = 'Julia' AND last_name = 'Barnett';
+
+4)
+UPDATE customer
+SET support_rep_id = 4
+WHERE email = 'luisrojas@yahoo.cl'
+
+
+5)
+Find all tracks that are the genre Metal and have no composer. Set the composer to "The darkness around us".
+
+6)
+Refresh your page to remove all database changes.
