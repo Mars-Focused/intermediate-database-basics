@@ -115,7 +115,21 @@ WHERE email = 'luisrojas@yahoo.cl'
 
 
 5)
-Find all tracks that are the genre Metal and have no composer. Set the composer to "The darkness around us".
+UPDATE track
+SET composer = 'The darkness around us'
+WHERE genre_id = ( SELECT genre_id FROM genre WHERE name ='Metal') 
+AND composer IS null
 
 6)
 Refresh your page to remove all database changes.
+
+GROUP BY___________________________________________________
+
+1)
+SELECT count(*), g.name
+FROM track t
+JOIN genre g
+on t.genre_id = g.genre_id
+GROUP BY g.genre_id;
+
+2)
